@@ -11,13 +11,15 @@ To download the dataset:
 </ul>
 <br>
 before running the code, you have to put the dataset as zipped files in compressed directory. The code will unzip it and split it randomly.
-    .
-    └── data
-        └── compressed   
-            └── UCMerced_LandUse.zip 
-            └── KSA.zip 
-            └── AID.zip  
-            └── PatternNet.zip 
+<pre>
+ .
+ └── data 
+     └── compressed 
+         ├── UCMerced_LandUse.zip 
+         ├── KSA.zip 
+         ├── AID.zip
+         └── PatternNet.zip 
+</pre>
 
 ### Help
 running parameters
@@ -103,8 +105,7 @@ running parameters
 ### Usage
 To run the training and evaluation with the default values, run the following command:
 ```
-# ksa dataset is just an example
-python run.py --dataset_name ksa  --train --eval
+python run.py --train --eval
 ```
 To run the code using your own parameters, run the following command
 ```
