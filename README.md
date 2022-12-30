@@ -1,5 +1,5 @@
 # Weight-Initialization
-This repository is an implementation of an efficent weight initialization method that 
+This repository is an implementation of an efficent weight initialization method used to improve the satellite image classification. Comparative analyses with existing weight initialization techniques made on various CNN models reveal that the proposed weight initialization method outperforms the previous competitive techniques in terms of classification accuracy. 
 
 ### Dataset Setup
 To download the dataset:
