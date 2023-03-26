@@ -11,7 +11,7 @@ import os
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     # basic settings
-    parser.add_argument("-dn",'--dataset_name', help='dataset name should be in [ucmerced, aid, ksa, patternnet, wadii]', default='ucmerced', choices=['ucmerced', 'aid', 'ksa', 'patternnet', 'wadii'])
+    parser.add_argument("-dn",'--dataset_name', help='dataset name should be in [ucmerced, aid, ksa, patternnet, wadii]', default='ucmerced', type=str)
     parser.add_argument("-mn",'--model_name', help='model username should be in [vgg11, vgg13, vgg16, vgg19, vgg11_bn, vgg13_bn, vgg16_bn, vgg19_bn, resnet18, resnet34, resnet50, resnet101, resnet152, resnext50_32x4d, resnext101_32x8d, resnext101_64x4d, wide_resnet50_2, wide_resnet101_2, mobilenet_v2]', default='mobilenet_v2', choices=['vgg11', 'vgg13', 'vgg16', 'vgg19', 'vgg11_bn', 'vgg13_bn', 'vgg16_bn', 'vgg19_bn', 'resnet18', 'resnet34', 'resnet50', 'resnet101', 'resnet152', 'resnext50_32x4d', 'resnext101_32x8d', 'resnext101_64x4d', 'wide_resnet50_2', 'wide_resnet101_2', 'mobilenet_v2'])
     parser.add_argument("-wi",'--weight_init', help='weight initialization method should be ether xavier or he to use the famouse method, and you can choose any other name to use our proposed method. ex: custom', default='custom', type=str)
     # running option 
