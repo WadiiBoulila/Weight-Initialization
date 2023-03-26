@@ -61,6 +61,24 @@ class RemoteSensingDataset():
             self.images_folder_path = os.path.join(base_images_folder_path, 'SatelliteDatasetForEncryption')
             self.splitted_data_path = os.path.join(base_splitted_data_path, dataset_name)
             self.gdrive = True
+        elif dataset_name == 'cifar10':
+            self.name = dataset_name
+            self.download_link = ''
+            self.download_path = base_download_path
+            self.zip_file = 'cifar10.zip'
+            self.unzip_path = base_images_folder_path
+            self.images_folder_path = os.path.join(base_images_folder_path, 'cifar10')
+            self.splitted_data_path = os.path.join(base_splitted_data_path, dataset_name)
+            self.gdrive = False
+        elif dataset_name == 'cifar100':
+            self.name = dataset_name
+            self.download_link = ''
+            self.download_path = base_download_path
+            self.zip_file = 'cifar100.zip'
+            self.unzip_path = base_images_folder_path
+            self.images_folder_path = os.path.join(base_images_folder_path, 'cifar100')
+            self.splitted_data_path = os.path.join(base_splitted_data_path, dataset_name)
+            self.gdrive = False
         else:
             raise Exception("Your target dataset information is not found. Go to dataset.py and add your dataset information. Then, try again.")
         
