@@ -4,10 +4,10 @@ This repository is an implementation of an efficent weight initialization method
 ### Dataset Setup
 To download the dataset:
 <ul>
-  <li><a href="">UC-Merced</a></li>
+  <li><a href="http://weegee.vision.ucmerced.edu/datasets/landuse.html">UC-Merced</a></li>
   <li><a href="">KSA</a></li>
-  <li><a href="">AID</a></li>
-  <li><a href="">PatternNet</a></li>
+  <li><a href="https://captain-whu.github.io/AID/">AID</a></li>
+  <li><a href="https://sites.google.com/view/zhouwx/dataset">PatternNet</a></li>
 </ul>
 <br>
 before running the code, you have to put the dataset as zipped files in compressed directory. The code will unzip it and split it randomly.
