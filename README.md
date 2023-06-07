@@ -9,7 +9,7 @@ The proposed weight initialization method is applied to three pre-trained models
 
 The figure below details the performances of the proposed weight initialization method on four public remote senging datasets, namely, UC-Merced, AID, KSA, and PatternNet.
 
-<img src="doc/img1.png" />
+<img src="https://raw.githubusercontent.com/WadiiBoulila/Weight-Initialization/main/docs/img1.png" />
 
 The training progress plots in the figures below illustrate the performance of the proposed weight initialization method, as well as the Xavier, He, and zerO methods, on the CIFAR-100 dataset. The first figure displays the training progress of validation accuracy, while the second figure focuses on validation loss.
 
@@ -17,8 +17,8 @@ The analysis of the plots shows that the proposed weight initialization method o
 
 The comparison with He, Xavier, and zerO initialization methods further confirms the superior performance of the proposed approach. Notably, the zoomed-in subplots highlight the enhanced accuracy and reduced loss achieved by our proposed method in the final ten iterations. These findings highlight the effectiveness of the proposed weight initialization method in improving accuracy and minimizing the discrepancy between predicted and actual values.
 
-<img src="doc/img2.png" />
-<img src="doc/img3.png" />
+<img src="https://raw.githubusercontent.com/WadiiBoulila/Weight-Initialization/main/docs/img2.png" />
+<img src="https://raw.githubusercontent.com/WadiiBoulila/Weight-Initialization/main/docs/img3.png" />
 
 ### Dataset Setup
 To download the dataset:
