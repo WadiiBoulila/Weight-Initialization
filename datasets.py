@@ -12,7 +12,7 @@ base_images_folder_path = 'data/uncompressed/'
 base_splitted_data_path = 'data/splitted/'
 
 class RemoteSensingDataset():
-    def __init__(self, dataset_name='ucmerced', batch_size=16, printing=False):
+    def __init__(self, dataset_name='ucmerced', batch_size=16, image_size=224, printing=False):
         # lowercase user input
         dataset_name = dataset_name.lower()
         # properties setup
@@ -80,17 +80,15 @@ class RemoteSensingDataset():
         # transforms (data augmentation)
         data_transforms = {
             'train': transforms.Compose([
-                # transforms.Resize(224),
-                transforms.RandomCrop(32, padding=4),
+                transforms.Resize((image_size,image_size)),
                 transforms.RandomHorizontalFlip(),
                 transforms.ToTensor(),
-                transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010))
+                transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
             ]),
             'val': transforms.Compose([
-                # transforms.Resize(224),
-                transforms.RandomCrop(32, padding=4),
+                transforms.Resize((image_size,image_size)),
                 transforms.ToTensor(),
-                transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010))
+                transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
             ])
         }
         # initialize dataseta
