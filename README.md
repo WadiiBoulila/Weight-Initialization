@@ -5,14 +5,20 @@ This repository is an implementation of an efficent weight initialization method
 Significantly increased interest in satellite images has triggered the need for efficient mechanisms for extracting useful information from massive satellite images to provide better insight into them. Even though deep learning has shown significant progress in image classification. Nevertheless, in the literature, only a few results can be found on weight initialization techniques. These techniques train the networks' weights on massive datasets and fine-tune the weights of pre-trained networks. In this study, a novel weight initialization method is proposed in the context of satellite image classification. The proposed weight initialization method is mathematically detailed during the forward and backward passes of the CNN model. Extensive experiments are carried out using six real-world datasets. Comparative analyses with existing weight initialization techniques made on various pre-trained CNN models reveal that the proposed weight initialization technique outperforms the previous competitive techniques in classification accuracy.
 
 # Results
+The proposed weight initialization method is applied to three pre-trained models, namely Resnet152V2, VGG19, and MobileNetV2. The models were trained for 100 epochs, each consisting of 32 batches. Xavier, He, and the proposed weight initialization method are applied to the three CNN models. All the models are trained on a learning rate 1e-4 with Adam optimizer. 
 
-The convergence analysis of He, Xavier, and the proposed weight initialization method have been investigated to evaluate the stability of the training pattern and the accuracy they achieve. The figure below depicts the validation accuracy plots for 100 epochs for VGG19, ResNet152, and MobileNetV2. We observe that the validation accuracy of the proposed weight initialization is increasing faster than the validation accuracies in Xavier and He weight initialization methods. The distribution lines in the figure have been smoothed using the Gaussian filter because they have a very high variation. We note that the proposed weight-initialization method has enhanced the validation accuracy by 0.1\% to 0.4\% compared to He and Xavier methods for the three models, VGG19, ResNet152, and MobileNetV2.
+The figure below details the performances of the proposed weight initialization method on four public remote senging datasets, namely, UC-Merced, AID, KSA, and PatternNet.
 
-<object data="https://www.docdroid.net/Ic9TGli/ca-pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="https://www.docdroid.net/Ic9TGli/ca-pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://www.docdroid.net/Ic9TGli/ca-pdf">Download PDF</a>.</p>
-    </embed>
-</object>
+<img src="doc/img1.png" />
+
+The training progress plots in the figures below illustrate the performance of the proposed weight initialization method, as well as the Xavier, He, and zerO methods, on the CIFAR-100 dataset. The first figure displays the training progress of validation accuracy, while the second figure focuses on validation loss.
+
+The analysis of the plots shows that the proposed weight initialization method outperforms the three other weight initialization techniques in terms of both accuracy and loss, as shown in both the overall training progress and the zoomed-in subplots. The performance advantage of the proposed method is visually apparent, with consistently higher accuracy values and lower loss values throughout the training process.
+
+The comparison with He, Xavier, and zerO initialization methods further confirms the superior performance of the proposed approach. Notably, the zoomed-in subplots highlight the enhanced accuracy and reduced loss achieved by our proposed method in the final ten iterations. These findings highlight the effectiveness of the proposed weight initialization method in improving accuracy and minimizing the discrepancy between predicted and actual values.
+
+<img src="doc/img2.png" />
+<img src="doc/img3.png" />
 
 ### Dataset Setup
 To download the dataset:
