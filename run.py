@@ -14,6 +14,7 @@ if __name__ == '__main__':
     parser.add_argument("-dn",'--dataset_name', help='dataset name should be in [ucmerced, aid, ksa, patternnet, wadii]', default='ucmerced', type=str)
     parser.add_argument("-mn",'--model_name', help='model username should be in [vgg11, vgg13, vgg16, vgg19, vgg11_bn, vgg13_bn, vgg16_bn, vgg19_bn, resnet18, resnet34, resnet50, resnet101, resnet152, resnext50_32x4d, resnext101_32x8d, resnext101_64x4d, wide_resnet50_2, wide_resnet101_2, mobilenet_v2]', default='mobilenet_v2', choices=['vgg11', 'vgg13', 'vgg16', 'vgg19', 'vgg11_bn', 'vgg13_bn', 'vgg16_bn', 'vgg19_bn', 'resnet18', 'resnet34', 'resnet50', 'resnet101', 'resnet152', 'resnext50_32x4d', 'resnext101_32x8d', 'resnext101_64x4d', 'wide_resnet50_2', 'wide_resnet101_2', 'mobilenet_v2'])
     parser.add_argument("-wi",'--weight_init', help='weight initialization method should be ether xavier or he to use the famouse method, and you can choose any other name to use our proposed method. ex: custom', default='custom', type=str)
+    parser.add_argument("-is",'--image_size', help='image size for the transforms', default=224, type=int)
     # running option 
     parser.add_argument("-tr","--train", help="training option (default: False)", default=False, action="store_true")
     parser.add_argument("-ev","--eval", help="evaluation option (default: False)", default=False, action="store_true")
@@ -35,7 +36,7 @@ if __name__ == '__main__':
     if not (args.train or args.eval or args.eval_summary):
         print('please run the file properly. for more information: https://github.com/WadiiBoulila/Weight-Initialization')
     if args.train or args.eval:
-        main(args.dataset_name, args.model_name, args.weight_init, args.train, args.eval, args.save, args.overwrite, args.batch_size, args.learning_rate, args.epochs, args.printing)
+        main(args.dataset_name, args.model_name, args.weight_init, args.train, args.eval, args.save, args.overwrite, args.image_size, args.batch_size, args.learning_rate, args.epochs, args.printing)
     if args.eval_summary:
         evaluation_summary(args.dataset_name, args.model_name, avg_num=args.avg_num, summary_save_path=args.summary_save_path)
     
