@@ -11,7 +11,7 @@ import os
 checkpoint_path = './results/checkpoints'
 log_path = './results/log'
 
-def main(dataset_name, model_name, init_name=None, train_opt=True, eval_opt=True, save=True, overwrite=True, batch_size=16, learning_rate=0.0001, epochs=100, printing=True, return_acc=False):
+def main(dataset_name, model_name, init_name=None, train_opt=True, eval_opt=True, save=True, overwrite=True, image_size=224, batch_size=16, learning_rate=0.0001, epochs=100, printing=True, return_acc=False):
     if printing:
         print('*'*50)
         print(' '*50, 'model name:    ', model_name.upper())
@@ -40,7 +40,7 @@ def main(dataset_name, model_name, init_name=None, train_opt=True, eval_opt=True
     # train/eval options
     if train_opt or eval_opt:
         # get train and val dataloaders
-        dataset = RemoteSensingDataset(dataset_name, batch_size, printing=printing)
+        dataset = RemoteSensingDataset(dataset_name, batch_size, image_size, printing=printing)
         # try to use gpu
         device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         # initialize the model
