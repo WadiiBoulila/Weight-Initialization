@@ -1,11 +1,24 @@
 # Weight-Initialization
 This repository is an implementation of an efficent weight initialization method used to improve the satellite image classification. Comparative analyses with existing weight initialization techniques made on various CNN models reveal that the proposed weight initialization method outperforms the previous competitive techniques in terms of classification accuracy. 
 
+# Abstract
+Significantly increased interest in satellite images has triggered the need for efficient mechanisms for extracting useful information from massive satellite images to provide better insight into them. Even though deep learning has shown significant progress in image classification. Nevertheless, in the literature, only a few results can be found on weight initialization techniques. These techniques train the networks' weights on massive datasets and fine-tune the weights of pre-trained networks. In this study, a novel weight initialization method is proposed in the context of satellite image classification. The proposed weight initialization method is mathematically detailed during the forward and backward passes of the CNN model. Extensive experiments are carried out using six real-world datasets. Comparative analyses with existing weight initialization techniques made on various pre-trained CNN models reveal that the proposed weight initialization technique outperforms the previous competitive techniques in classification accuracy.
+
+# Results
+
+The convergence analysis of He, Xavier, and the proposed weight initialization method have been investigated to evaluate the stability of the training pattern and the accuracy they achieve. The figure below depicts the validation accuracy plots for 100 epochs for VGG19, ResNet152, and MobileNetV2. We observe that the validation accuracy of the proposed weight initialization is increasing faster than the validation accuracies in Xavier and He weight initialization methods. The distribution lines in the figure have been smoothed using the Gaussian filter because they have a very high variation. We note that the proposed weight-initialization method has enhanced the validation accuracy by 0.1\% to 0.4\% compared to He and Xavier methods for the three models, VGG19, ResNet152, and MobileNetV2.
+
+<object data="https://www.docdroid.net/Ic9TGli/ca-pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="https://www.docdroid.net/Ic9TGli/ca-pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://www.docdroid.net/Ic9TGli/ca-pdf">Download PDF</a>.</p>
+    </embed>
+</object>
+
 ### Dataset Setup
 To download the dataset:
 <ul>
   <li><a href="http://weegee.vision.ucmerced.edu/datasets/landuse.html">UC-Merced</a></li>
-  <li><a href="">KSA</a></li>
+  <li><a href="https://drive.google.com/file/d/1H400Qamkl7oVCvvMzcQ72N0-jEZuegk5/view?usp=sharing">KSA</a></li>
   <li><a href="https://captain-whu.github.io/AID/">AID</a></li>
   <li><a href="https://sites.google.com/view/zhouwx/dataset">PatternNet</a></li>
 </ul>
@@ -43,6 +56,11 @@ running parameters
     <td>[-wi][--weight_init]</td>
     <td>weight initialization method should be ether xavier or he to use the famouse method, and you can choose any other name to use our proposed method</td>
     <td>custom</td>
+  </tr>
+  <tr>
+    <td>[-is][--image_size]</td>
+    <td>image size tfor data transforms</td>
+    <td>224</td>
   </tr>
   <tr>
     <td>[-tr][--train]</td>
