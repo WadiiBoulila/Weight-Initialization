@@ -7,6 +7,97 @@ Significantly increased interest in satellite images has triggered the need for 
 # Results
 The proposed weight initialization method is applied to three pre-trained models, namely Resnet152V2, VGG19, and MobileNetV2. The models were trained for 100 epochs, each consisting of 32 batches. Xavier, He, and the proposed weight initialization method are applied to the three CNN models. All the models are trained on a learning rate 1e-4 with Adam optimizer. 
 
+<table>
+<thead>
+  <tr>
+    <th>model</th>
+    <th>init</th>
+    <th>cifar100</th>
+    <th>ucmerced</th>
+    <th>aid</th>
+    <th>ksa</th>
+    <th>patternnet</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td rowspan="3">ResNet152</td>
+    <td>He</td>
+    <td>0.5507</td>
+    <td>0.5381</td>
+    <td>0.3915</td>
+    <td>0.7108</td>
+    <td>0.7298</td>
+  </tr>
+  <tr>
+    <td>Xavier</td>
+    <td>0.4975</td>
+    <td>0.5095</td>
+    <td>0.4140</td>
+    <td>0.7308</td>
+    <td>0.7451</td>
+  </tr>
+  <tr>
+    <td><b>Proposed</b></td>
+    <td><b>0.5514</b></td>
+    <td><b>0.5452</b></td>
+    <td><b>0.4300</b></td>
+    <td><b>0.7338</b></td>
+    <td><b>0.7896</b></td>
+  </tr>
+  <tr>
+    <td rowspan="3">VGG19</td>
+    <td>He</td>
+    <td>0.6690</td>
+    <td>0.6786</td>
+    <td>0.503</td>
+    <td>0.8292</td>
+    <td>0.8461</td>
+  </tr>
+  <tr>
+    <td>Xavier</td>
+    <td>0.6658</td>
+    <td>0.6762</td>
+    <td>0.507</td>
+    <td>0.8308</td>
+    <td>0.8362</td>
+  </tr>
+  <tr>
+    <td><b>Proposed</b></td>
+    <td><b>0.6737</b></td>
+    <td><b>0.6833</b></td>
+    <td><b>0.5120</b></td>
+    <td><b>0.8400</b></td>
+    <td><b>0.8462</b></td>
+  </tr>
+  <tr>
+    <td rowspan="3">MobileNetV2</td>
+    <td>He</td>
+    <td>0.5682</td>
+    <td>0.4500</td>
+    <td>0.3510</td>
+    <td>0.6831</td>
+    <td>0.7298</td>
+  </tr>
+  <tr>
+    <td>Xavier</td>
+    <td>0.5652</td>
+    <td>0.4333</td>
+    <td>0.3435</td>
+    <td>0.7031</td>
+    <td>0.7451</td>
+  </tr>
+  <tr>
+    <td><b>Proposed</b></td>
+    <td><b>0.5683</b></td>
+    <td><b>0.4690</b></td>
+    <td><b>0.3575</b></td>
+    <td><b>0.7246</b></td>
+    <td><b>0.7896</b></td>
+  </tr>
+</tbody>
+</table>
+  
 The figure below details the performances of the proposed weight initialization method on four public remote senging datasets, namely, UC-Merced, AID, KSA, and PatternNet.
 
 <img src="https://raw.githubusercontent.com/WadiiBoulila/Weight-Initialization/main/docs/img1.png" />
